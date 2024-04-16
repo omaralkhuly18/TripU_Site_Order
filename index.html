@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="Assets/image/logo(2).png" type="image/x-icon">
+  <link rel="stylesheet" href="Assets/css/aos_style.css">
+  <link rel="stylesheet" href="Assets/css\style.css" />
+  <link rel="stylesheet" href="Assets/css\style_ar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+  <title> TripU || Index </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+  <!--Navigation -->
+  <nav class="style_hieght">
+    <div class="container">
+
+      <div class="flex-between">
+
+        <a href="index.html" class="company-logo logo_white">
+          <img class="img_logo_white" src="Assets/image\whait logo/512x.png " alt="TripU">
+          <!-- <h1 class="text_logo_white" style="color: #ffffff;">TripU</h1> -->
+        </a>
+
+        <div class="container_nav_bar">
+          <div class="nav-link-button-center">
+            <ul class="flex-center-center">
+              <li class="list_navBar">
+                <button class="nav-button dropbtn data_about" onclick="toggleDropdown()">
+                  <span> شركة </span>
+                  <i class="fa-solid fa-angle-down style_new"></i>
+                </button>
+                <ul id="myDropdown" class="dropdown-content">
+                  <li class="list_dropDown">
+                    <a class="link_dropDown" id="" href="#about"> معلومات عنا </a>
+                  </li>
+                  <li class="list_dropDown">
+                    <a class="link_dropDown" id="" href="#offer">عروض</a>
+                  </li>
+                  <li class="list_dropDown"><a class="link_dropDown" id="" href="#contact"> اتصل بنا </a></li>
+                </ul>
+              </li>
+              <li class="list_navBar">
+                <a href="#safety"><button class="nav-button"> أمان </button></a>
+              </li>
+              <li class="list_navBar">
+                <a href="#helping"><button class="nav-button"> يساعد </button></a>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-link-button-left">
+            <ul class="flex-center-left">
+              <li class="list_navBar_left ">
+                <a href="home_en.html"> <button class="nav-button language">
+                    En
+                    <i class="fa-solid fa-globe"></i>
+                  </button></a>
+              </li>
+              <li class="list_navBar_left">
+                <button class="nav-button product" onclick="productDropdown()">
+                  <!-- <i class="fa-solid fa-braille"></i> -->
+                  <span> معلومات تعريفيه </span>
+                </button>
+                <ul id="productDropdown" class="dropdown-product">
+                  <li class="list_dropDown"><a class="link_dropDown" id="" href="#servier"> خدمات </a></li>
+                  <li class="list_dropDown"><a class="link_dropDown" id="" href="policy_user_ar.html"> سياسة </a></li>
+                </ul>
+              </li>
+              <li class="list_navBar_left">
+                <a href="#autho"><button class="nav-button"> تسجيل الدخول </button></a>
+              </li>
+              <li class="list_navBar_left">
+                <a href="#autho"><button class="nav-button-white"> اشتراك </button></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="button_mobile_nav">
+
+          <div class="this_button menu-toggle" id="openButton" onclick="openNav()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <!--Hero Section-->
+  <header>
+    <div class="heroImg" data-aos="fade-up">
+      <div class="container">
+
+        <div class="header-section">
+          <div class="hero-leftbox-up">
+
+            <div class="iconbox active taskbar-item" id="iconbox1">
+              <i class="fa-solid fa-car"></i> <span> اطلب مشواراً </span>
+            </div>
+
+            <div class="iconbox taskbar-item" id="iconbox2">
+              <i class="fa-solid fa-ranking-star"></i>
+              <span> أكتب سعرك وسجل للتواصل </span>
+            </div>
+
+            <div class="iconbox taskbar-item" id="iconbox3">
+              <i class="fa-solid fa-eraser"></i> <span> تفاصيل معلوماتك </span>
+            </div>
+
+          </div>
+
+          <div class="hero-leftbox-down" id="step1">
+            <h2> اطلب رحلة الآن </h2>
+            <form id="step1Form">
+              <input type="text" id="location" placeholder=" أدخل موقع الالتقاط " required />
+              <input type="text" id="destination" placeholder=" أدخل الوجهة " required />
+              <div class="hero-button">
+                <button class="primary-button" id="myButton" onclick="validateStep(1)">
+                  اطلب الآن
+                </button>
+                <button class="secondary-button" type="button" onclick="openScheduleModal ()">
+                  الجدول الزمني في وقت لاحق
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="hero-leftbox-down" id="step2" style="display: none;">
+            <h2> تحديد والمفاصله للسعر </h2>
+            <form id="step2Form">
+              <input type="text" id="number" placeholder=" أدخل السعر الذي يناسبك " required />
+              <input type="tel" id="tel" placeholder=" أدخل رقم هاتفك للتواصل.. " required />
+              <div class="hero-button">
+                <button type="button" class="primary-button" onclick="validateStep(2)">
+                  التالي
+                </button>
+                <button type="button" class="secondary-button" onclick="prevStep(2)">
+                  سابق
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="hero-leftbox-down" id="step3" style="display: none;">
+            <h2> مراجعة معلوماتك </h2>
+            <div id="confirmation"></div>
+            <div class="hero-button">
+              <button type="button" class="primary-button" onclick="submitForm()">
+                يُقدِّم
+              </button>
+              <button type="button" class="secondary-button" onclick="prevStep(3)">
+                سابق
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="myModal">
+        <div class="alert">
+          <p id="modalText"> في محطة للحافلات! </p>
+          <div class="list_button_alert">
+            <button class="return_button" onclick="resetForm()">
+              العودة إلى الخطوة 1
+            </button>
+            <button class="print_button" onclick="printDetails()">
+              تفاصيل الطباعة
+            </button>
+            <button class="close_button" onclick="closeModal()">
+              يغلق
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+          <span class="close_this" onclick="closeScheduleModal()">&times;</span>
+          <!-- جدول الزمني -->
+          <table class="table_data table-responsive">
+            <thead>
+              <tr>
+                <th>
+                  الوقت
+                </th>
+                <th>
+                  اليوم
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- أضف هنا مواعيد العمل -->
+              <tr class="style_table_information">
+                <td>
+                  9:00 صباحاً - 5:00 مساءً
+                </td>
+                <td>
+                  الأحد
+                </td>
+              </tr>
+              <tr class="style_table_information">
+                <td>
+                  9:00 صباحاً - 5:00 مساءً
+                </td>
+                <td>
+                  الأثنين
+                </td>
+              </tr>
+              <tr class="style_table_information">
+                <td>
+                  9:00 صباحاً - 5:00 مساءً
+                </td>
+                <td>
+                  الثلاثاء
+                </td>
+              </tr>
+              <tr class="style_table_information">
+                <td>
+                  9:00 صباحاً - 5:00 مساءً
+                </td>
+                <td>
+                  الأربعاء
+                </td>
+              </tr>
+              <tr class="style_table_information">
+                <td>
+                  9:00 صباحاً - 3:00 مساءً
+                </td>
+                <td>
+                  الخميس
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </header>
+
+  <!--GetStarted Section-->
+  <section class="Getstarted-section" id="about">
+    <div class="getstarted-bg-img style_update">
+      <div class="container">
+        <div class="main-getstarted-content">
+          <h3> انطلق في مغامرات لا تُنسى مع Tripu واكتشف وجهات جديدة كل يوم. </h3>
+          <p>
+            اختر Tripu لرحلات سيارات وموتوسيكلات مثالية بأفضل الأسعار.
+          </p>
+          <button class="primary-button clip-path">
+            <a href="usedApp_ar.html">البدء</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Safety Feature Section-->
+  <section class="safetyfeature-section" id="safety">
+    <div class="container">
+      <h3 class="text_top_sections" data-aos="zoom-in">
+        التركيز على السلامة أينما ذهبت
+      </h3>
+      <div class="safetyfeature-container">
+        <div class="safetyfeature-left" data-aos="fade-right">
+          <img src="Assets/image/driver3.jpg" alt="safety1" />
+          <h3>
+            نهدف إلى ضمان أن يكون كل خٍيار تتخذه باستخدام آمنًا ومضمونًا مع TripU.
+          </h3>
+          <p class="safety_style">
+            في TripU، نهتم بشكل عام بسلامة مستخدمينا، ونولي يهمنا دائمًا توفير بيئة آمنة وموثوقة لتجارتهم.
+          </p>
+          <p>
+            أولويتنا القصوى هي ضمان سلامتك. نحن نتعاون فقط مع مزودي خدمات موثوق بهم .
+          </p>
+          <div class="safety-span">
+            <a class="link_Ago_pages_one clip-path link_media" role="button" aria-expanded="false" href="#"
+              onclick="return false">
+              اقرأ عن إرشادات مجتمعنا
+            </a>
+            <a class="link_Ago_pages_one clip-path link_media" role="button" aria-expanded="false" href="#"
+              onclick="return false">
+              شاهد جميع ميزات السلامة
+            </a>
+          </div>
+        </div>
+
+        <div class="safetyfeature-right" data-aos="fade-left">
+          <img src="Assets/image/driver1.jpg" alt="safety1" />
+          <h3>
+            يمكنك القيادة متى شئت، وتحقيق ما تحتاج إليه من دخل
+          </h3>
+          <p>
+            حقِّق الأرباح بما يناسب مواعيدك من خلال خدمات التوصيل أو إجراء المشاوير، أو الاثنين. يمكنك استخدام سيارتك
+            الخاصة أو اختيار سيارة متاحة للإيجار من خلال TripU
+          </p>
+          <a class="link_Ago_pages_one clip-path" role="button" aria-expanded="false" href="#" onclick="return false">
+            عرض جميع المدن
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Feature Section-->
+  <section class="feature-section" id="helping">
+    <div class="container">
+
+      <h3 class="text_top_sections" data-aos="zoom-in">
+        TripU في ثوبها الجديد لقطاع الأعمال
+      </h3>
+
+      <div class="feature-innercontainer">
+
+        <div class="featureBox" data-aos="fade-right">
+          <div class="cover_taps_one">
+            <div class="feature-Img">
+              <img src="Assets/image/Aboutus.png" alt="about-us-img" />
+            </div>
+            <h3>
+              نبذه عنا
+            </h3>
+            <p>
+              نعيد تصور الطريقة التي يسير بها العالم نحو الأفضل
+            </p>
+            <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#" onclick="return false">
+              تعرف أكثر عن TripU
+            </a>
+          </div>
+        </div>
+
+        <div class="featureBox" data-aos="fade-up">
+          <div class="cover_taps_one">
+            <div class="feature-Img">
+              <img src="Assets/image/paper.png" alt="about-us-img" />
+            </div>
+            <h3>
+              غرفة الأخبار
+            </h3>
+            <p>
+              اطلع على الإعلانات حول أحدث إصداراتنا ومبادراتنا و
+              الشراكه.
+            </p>
+            <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#" onclick="return false">
+              اذهب إلى غرفة الأخبار
+            </a>
+          </div>
+        </div>
+
+        <div class="featureBox" data-aos="fade-left">
+          <div class="cover_taps_one">
+            <div class="feature-Img">
+              <img src="Assets/image/home.png" alt="about-us-img" />
+            </div>
+            <h3>
+              المواطنة العالمية
+            </h3>
+            <p>
+              اقرأ عن التزامنا بإحداث تأثير إيجابي في المدن
+              نحن نخدم.
+            </p>
+            <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#" onclick="return false">
+              انظر إشتراكاتنا
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- offer section -->
+  <section class="offer-section" id="offer">
+    <div class="container">
+
+      <h3 class="text_top_sections" data-aos="zoom-in">
+        يستهدف التطبيق تقديم رحلات عادلة
+      </h3>
+
+      <div class="offer-innercontainer">
+
+        <div class="offerBox" data-aos="fade-right">
+          <div class="cover_taps_one">
+            <div class="offer-Img">
+              <img src="Assets/image/task/city.png" alt="about-us-img" />
+            </div>
+            <h3>
+              رحلات المدينة
+            </h3>
+            <p>
+              اختر سائقاً واعرض أجرتك مقابل الرحلة
+            </p>
+            <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#" onclick="return false">
+              تعرف على المزيد
+            </a>
+          </div>
+        </div>
+
+        <div class="offerBox" data-aos="fade-up">
+          <div class="cover_taps_one">
+            <div class="offer-Img">
+              <img src="Assets/image/task/transparent.png" alt="about-us-img" />
+            </div>
+            <h3>
+              نقل وتوصيل الشُحنات
+            </h3>
+            <p>
+              نقل وشحن البضائع بالسعر الذي تحدده
+            </p>
+            <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#" onclick="return false">
+              تعرف على المزيد
+            </a>
+          </div>
+        </div>
+
+        <div class="offerBox" data-aos="fade-left">
+          <div class="cover_taps_one">
+            <div class="offer-Img">
+              <img src="Assets/image/task/travel.png" alt="about-us-img" />
+            </div>
+            <h3>
+              سفر
+            </h3>
+            <p>
+              سافر من مدينة إلى مدينة أخرى بسعر تختاره
+            </p>
+            <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#" onclick="return false">
+              تعرف على المزيد
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--Ride Section-->
+  <section class="Ride-section" data-aos="fade-up" id="servier">
+    <div class="container">
+      <h2 data-aos="fade-left" class="zoom-in style_fonrSize">
+        في TripU، نعتقد أن كل رحلة يجب أن تكون ليس فقط مغامرة مثيرة بل أيضاً تجربة آمنة ومطمئنة.
+      </h2>
+      <div class="ride-feature-container">
+        <div class="ride-box1" data-aos="fade-right">
+          <div class="ride-img">
+            <img src="Assets/image/Ride1.jpg" alt="ride-1" />
+          </div>
+          <div class="ride-content">
+            <h3>TripU تروسكل</h3>
+            <p>
+              TripU آلي تضع الأمان في صميم خدماتنا، مما يسمح لك بالاستكشاف والتمتع برحلتك دون قلق. سواء كنت تخطط لرحلة
+              قصيرة في المدينة أو مغامرة عبر الطرق الوعرة
+            </p>
+          </div>
+          <div class="ride-arrow">
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
+          </div>
+        </div>
+
+        <div class="ride-box1" data-aos="fade-left">
+          <div class="ride-img">
+            <img src="Assets/image/Ride2.png" alt="ride-2" />
+          </div>
+          <div class="ride-content">
+            <h3>TripU موتور </h3>
+            <p>
+              مع TripU ماتور، استعد لرحلات لا تُنسى على الطرق مع الأمان والإثارة كأولوياتنا اكتشف متعة الطرق المفتوحة مع
+              ماتور من TripU، حيث كل رحلة هي بداية لقصة جديدة.
+            </p>
+          </div>
+          <div class="ride-arrow">
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
+          </div>
+        </div>
+
+        <div class="ride-box1" data-aos="fade-right">
+          <div class="ride-img">
+            <img src="Assets/image/Ride3.png" alt="ride-3" />
+          </div>
+          <div class="ride-content">
+            <h3>TripU رحله مباشره </h3>
+            <p>
+              استكشف العالم بحرية مع خدمة الإيجار من TripU، حيث الراحة والمرونة في اختيار رحلتك مع TripU للإيجار، تمتع
+              بتجربة استئجار سهلة ومريحة لجعل كل رحلة أكثر خصوصية
+            </p>
+          </div>
+          <div class="ride-arrow">
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
+          </div>
+        </div>
+
+        <div class="ride-box1" data-aos="fade-left">
+          <div class="ride-img">
+            <img src="Assets/image/Ride4.png" alt="ride-4" />
+          </div>
+          <div class="ride-content">
+            <h3>TripU التنقل بين المدن</h3>
+            <p>
+              TripU يجعل التنقل بين المدن تجربة سلسة ومريحة، مع توفير خيارات نقل متنوعة استمتع برحلات بين المدن بدون
+              توتر مع TripU، حيث السفر يصبح أسهل وأسرع
+            </p>
+          </div>
+          <div class="ride-arrow">
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
+          </div>
+        </div>
+
+        <div class="ride-box1" data-aos="fade-left">
+          <div class="ride-img">
+            <img src="Assets/image/Ride5.png" alt="ride-4" />
+          </div>
+          <div class="ride-content">
+            <h3>TripU للنقل</h3>
+            <p>
+              توفر TripU خدمات نقل الأثاث التي تلبي احتياجاتك بالكامل، مما يجعل عملية الانتقال إلى المنزل الجديد سلسة
+              ومريحة حجز خدمات نقل الأثاث بسهولة ويسر مع TripU لتجربة نقل مريحة وموثوقة
+            </p>
+          </div>
+          <div class="ride-arrow">
+            <i class="fa-solid fa-arrow-right text_rutaet"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- conatct us -->
+  <section class="Contact-section" id="contact">
+    <div class="container">
+      <h2 class="zoom-in" data-aos="fade-left">
+        إتصل بنا
+      </h2>
+      <div class="conatct-feature-section">
+        <form class="form_conatct" id="form">
+          <label class="label_conatct" for="name"> الإسم :</label>
+          <input class="input_name" type="text" id="name" name="name" required>
+
+          <label class="label_conatct" for="email"> الإيميل :</label>
+          <input class="input_email" type="email" id="email" name="email" required>
+
+          <label class="label_conatct" for="message"> الرساله الخاصه :</label>
+          <textarea class="url_message" id="message" name="message" required></textarea>
+
+          <button class="button_contact input_buuton" type="submit">أرسل</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+  <!--QR Section-->
+  <section class="QR-section">
+    <div class="container">
+      <h3 class="text_top_sections zoom-in" data-aos="fade-right">
+        إنه أسهل في التطبيقات
+      </h3>
+      <div class="QR-section-InnerContainer">
+
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.tripu.tripu&pli=1">
+          <div class="qr-section-box" data-aos="fade-right">
+            <div class="qr-img">
+              <img src="Assets/image/TripU_captian.png" alt="QR" />
+            </div>
+            <div class="qr-img_2">
+              <img src="Assets/image/QR_wep/CAPTAIN.png" alt="QR" />
+            </div>
+            <div class="qr-content">
+              <h3>
+                تنزيل تطبيق الكابتن
+              </h3>
+              <p>
+                امسح الرمز ضوئياً للتنزيل
+              </p>
+            </div>
+            <div class="qr-arrow">
+              <i class="fa-solid fa-arrow-right text_rutaet"></i>
+            </div>
+          </div>
+        </a>
+
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.user.tripu">
+          <div class="qr-section-box" data-aos="fade-left">
+            <div class="qr-img">
+              <img src="Assets/image/TripU_clinte.png" alt="QR" />
+            </div>
+            <div class="qr-img_2">
+              <img src="Assets/image/QR_wep/CLIENT.png" alt="QR" />
+            </div>
+            <div class="qr-content">
+              <h3>
+                تنزيل تطبيق العميل
+              </h3>
+              <p>
+                امسح الرمز ضوئياً للتنزيل
+              </p>
+            </div>
+            <div class="qr-arrow">
+              <i class="fa-solid fa-arrow-right text_rutaet"></i>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!--Sign-Section-->
+  <section class="sign-section" data-aos="fade-up" id="autho">
+    <div class="container">
+      <div class="sign-section-container">
+        <a role="button" aria-expanded="false" href="#" onclick="return false">
+          <div class="sign-box">
+            <span>
+              تسجيل الدخول للكابتن
+            </span>
+            <div class="sign-arrow">
+              <i class="fa-solid fa-arrow-right text_rutaet"></i>
+            </div>
+          </div>
+        </a>
+        <a role="button" aria-expanded="false" href="#" onclick="return false">
+          <div class="sign-box">
+            <span>
+              تسجيل الدخول للعميل
+            </span>
+            <div class="sign-arrow">
+              <i class="fa-solid fa-arrow-right text_rutaet"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!--Footer-section-->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+            <div class="logo-widget footer-widget">
+              <figure class="logo-box">
+
+                <a class="footer-company-logo" href="index.html">
+                  <img class="img_logo_white" src="Assets/image/whait logo/512x.png " alt="TripU">
+                </a>
+              </figure>
+              <div class="text">
+                <p class="text_footer"> .قم بزيارة مركز المساعدة </p>
+                <span class="span_footer">
+                  <a href="home_en.html"><i class="fa-solid fa-globe"></i> En</a>
+                </span>
+              </div>
+              <ul class="footer-social">
+                <li><a role="button" aria-expanded="false" href="#" onclick="return false"><i
+                      class="fa-brands fa-facebook"></i></a></li>
+                <li><a role="button" aria-expanded="false" href="#" onclick="return false"> <i
+                      class="fa-brands fa-youtube"></i></a></li>
+                <li><a role="button" aria-expanded="false" href="#" onclick="return false"><i
+                      class="fa-brands fa-linkedin"></i></a></li>
+                <li><a role="button" aria-expanded="false" href="#" onclick="return false"> <i
+                      class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12  footer-column">
+            <div class="service-widget footer-widget dir_right">
+              <div class="footer-title">
+                الشركة
+              </div>
+              <ul class="list">
+                <li><a href="#about">
+                    معلومات عنا
+                  </a></li>
+                <li><a href="#offer">
+                    عروضنا
+                  </a></li>
+                <li><a href="roomnews_ar.html">
+                    غرفة الأخبار
+                  </a></li>
+                <li><a href="page_global_ar.html">
+                    المواطنة العالمية
+                  </a></li>
+                <li><a href="faq_ar.html">
+                    مدونة
+                  </a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+            <div class="contact-widget footer-widget dir_right">
+              <div class="footer-title">
+                معلومات تعريفيه
+              </div>
+              <ul class="list">
+                <li><a href="#servier">
+                    خدمتنا
+                  </a></li>
+                <li><a href="policy_user_ar.html">
+                    سياستنا
+                  </a></li>
+                <li><a href="usedApp_ar.html">
+                    التعريف بالapp
+                  </a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+            <div class="contact-widget footer-widget dir_right">
+              <div class="footer-title">
+                المواطنة العالمية
+              </div>
+              <ul class="list">
+                <li><a href="#about">
+                    معلومات عنا
+                  </a></li>
+                <li><a href="#offer">
+                    عروضنا
+                  </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 column">
+            <div class="copyright"><a role="button" aria-expanded="false" href="#" onclick="return false">TripU</a>
+              &copy; 2023 All Right Reserved</div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 column">
+            <ul class="footer-nav">
+              <li><a href="policy_ar.html">
+                  شروط الخدمة
+                </a></li>
+              <li><a href="policy_ar.html">
+                  سياسة الخصوصية
+                </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- mobile menu -->
+  <div id="myNav" class="overlay">
+    <div class="nav_bar_modile_under">
+      <div class="under_mobile">
+        <a href="index.html">
+          <img src="Assets/image/whait logo/58x.png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="closebtn" id="closeButton" onclick="closeNav()">
+          <i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i>
+        </a>
+      </div>
+    </div>
+    <ul class="overlay-content">
+      <li class="list_mobile_nav">
+        <button class="nav-button menu_mobile data_about_mobile" onclick="menuMobileNav()">
+          <span> شركة </span>
+          <i class="fa-solid fa-angle-down style_new"></i>
+        </button>
+        <ul id="dropdownMobile" class="dropdown_content_mobile">
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="#about"> معلومات عنا </a>
+          </li>
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="#offer">عروض</a>
+          </li>
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="#contact"> اتصل بنا</a>
+          </li>
+        </ul>
+      </li>
+      <li class="list_mobile_nav">
+        <a href="#safety"><button class="nav-button"> أمان </button></a>
+      </li>
+      <li class="list_mobile_nav">
+        <a href="#helping"><button class="nav-button"> يساعد </button></a>
+      </li>
+      <li class="list_mobile_nav">
+        <a href="home_en.html"> <button class=" nav-button language_mobile">
+            En
+            <i class="fa-solid fa-globe"></i>
+          </button></a>
+      </li>
+      <li class="list_mobile_nav">
+        <button class=" nav-button" onclick="listMobileNav()">
+          <!-- <i class="fa-solid fa-braille"></i> -->
+          <span> معلومات تعريفيه </span>
+        </button>
+        <ul id="dropdownMobileList" class="dropdown_product_mobile">
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="#servier"> خدمات </a>
+          </li>
+          <li class="list_dropDown_mobile">
+            <a class="link_dropDown_mobile" id="" href="policy_user_ar.html"> سياسة </a>
+          </li>
+        </ul>
+      </li>
+      <li class="list_mobile_nav style_button_loreg">
+        <a href="#autho"><button class=" nav-button"> تسجيل الدخول </button></a>
+        <a href="#autho"><button class=" nav-button-white"> اشتراك </button></a>
+      </li>
+    </ul>
+  </div>
+
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/21798bf211.js" crossorigin="anonymous"></script>
+
+  <!--Aos/bootstrab/js-->
+  <script src="Assets/js/TripU_Script_ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <script src="Assets/js/aos_js.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

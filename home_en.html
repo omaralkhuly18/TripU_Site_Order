@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="Assets/image/logo(2).png" type="image/x-icon">
+    <link rel="stylesheet" href="Assets/css/aos_style.css" />
+    <link rel="stylesheet" href="Assets/css\style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+    <title> TripU || Home-EN </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<!-- \\sherif\tripu\website\UberCloneWebsite-HTML-CSS-main -->
+
+<body>
+    <!--Navigation -->
+    <nav class="style_hieght">
+        <div class="container">
+
+            <div class="flex-between">
+
+                <a href="home_en.html" class="company-logo logo_white">
+                    <img class="img_logo_white" src="Assets/image/whait logo/512x.png " alt="TripU">
+                    <!-- <h1 class="text_logo_white" style="color: #ffffff;">TripU</h1> -->
+                </a>
+
+                <div class="container_nav_bar">
+                    <div class="nav-link-button-center">
+                        <ul class="flex-center-center">
+                            <li class="list_navBar">
+                                <button class="nav-button dropbtn data_about" onclick="toggleDropdown()">
+                                    <span> company </span>
+                                    <i class="fa-solid fa-angle-down style_new"></i>
+                                </button>
+                                <ul id="myDropdown" class="dropdown-content">
+                                    <li class="list_dropDown">
+                                        <a class="link_dropDown" id="" href="#about"> about us</a>
+                                    </li>
+                                    <li class="list_dropDown">
+                                        <a class="link_dropDown" id="" href="#offer">Offers</a>
+                                    </li>
+                                    <li class="list_dropDown"><a class="link_dropDown" id="" href="#contact"> call us
+                                        </a></li>
+                                </ul>
+                            </li>
+                            <li class="list_navBar">
+                                <a href="#safety"><button class="nav-button"> safety </button></a>
+                            </li>
+                            <li class="list_navBar">
+                                <a href="#helping"><button class="nav-button"> Helps </button></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-link-button-left">
+                        <ul class="flex-center-left">
+                            <li class="list_navBar_left ">
+                                <a href="index.html"> <button class="nav-button language">
+                                        Ar
+                                        <i class="fa-solid fa-globe"></i>
+                                    </button></a>
+                            </li>
+                            <li class="list_navBar_left">
+                                <button class="nav-button product" onclick="productDropdown()">
+                                    <!-- <i class="fa-solid fa-braille"></i> -->
+                                    <span> Identification information</span>
+                                </button>
+                                <ul id="productDropdown" class="dropdown-product">
+                                    <li class="list_dropDown"><a class="link_dropDown" id="" href="#servier"> Services
+                                        </a>
+                                    </li>
+                                    <li class="list_dropDown"><a class="link_dropDown" id="" href="policy_user_en.html">
+                                            Policy </a></li>
+                                </ul>
+                            </li>
+                            <li class="list_navBar_left">
+                                <a href="#autho"><button class="nav-button"> sign in</button></a>
+                            </li>
+                            <li class="list_navBar_left">
+                                <a href="#autho"><button class="nav-button-white"> sign up </button></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="button_mobile_nav">
+
+                    <div class="this_button menu-toggle" id="openButton" onclick="openNav()">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!--Hero Section-->
+    <header>
+        <div class="heroImg" data-aos="fade-up">
+            <div class="container">
+
+                <div class="header-section">
+                    <div class="hero-leftbox-up">
+
+                        <div class="iconbox active taskbar-item" id="iconbox1">
+                            <i class="fa-solid fa-car"></i> <span> Ask for a ride</span>
+                        </div>
+
+                        <div class="iconbox taskbar-item" id="iconbox2">
+                            <i class="fa-solid fa-ranking-star"></i>
+                            <span> Write your price and register to communicate</span>
+                        </div>
+
+                        <div class="iconbox taskbar-item" id="iconbox3">
+                            <i class="fa-solid fa-eraser"></i> <span> Details of your information</span>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-leftbox-down" id="step1">
+                        <h2> Request a ride now</h2>
+                        <form id="step1Form">
+                            <input type="text" id="location" placeholder=" Enter the pickup location" required />
+                            <input type="text" id="destination" placeholder=" Enter the destination" required />
+                            <div class="hero-button">
+                                <button class="primary-button" id="myButton" onclick="validateStep(1)">
+                                    Order now
+                                </button>
+                                <button class="secondary-button" type="button" onclick="openScheduleModal ()">
+                                    Schedule later
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="hero-leftbox-down" id="step2" style="display: none;">
+                        <h2> Determine and articulate the price</h2>
+                        <form id="step2Form">
+                            <input type="text" id="number" placeholder=" Enter the price that suits you" required />
+                            <input type="tel" id="tel" placeholder=" Enter your phone number to contact.. " required />
+                            <div class="hero-button">
+                                <button type="button" class="primary-button" onclick="validateStep(2)">
+                                    the next
+                                </button>
+                                <button type="button" class="secondary-button" onclick="prevStep(2)">
+                                    former
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="hero-leftbox-down" id="step3" style="display: none;">
+                        <h2> Review your information </h2>
+                        <div id="confirmation"></div>
+                        <div class="hero-button">
+                            <button type="button" class="primary-button" onclick="submitForm()">
+                                presents
+                            </button>
+                            <button type="button" class="secondary-button" onclick="prevStep(3)">
+                                former
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="myModal">
+                <div class="alert">
+                    <p id="modalText"> At the bus stop! </p>
+                    <div class="list_button_alert">
+                        <button class="return_button" onclick="resetForm()">
+                            Return to step 1
+                        </button>
+                        <button class="print_button" onclick="printDetails()">
+                            Printing details
+                        </button>
+                        <button class="close_button" onclick="closeModal()">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="scheduleModal" class="modal">
+                <div class="modal-content">
+                    <span class="close_this" onclick="closeScheduleModal()">&times;</span>
+                    <!-- جدول الزمني -->
+                    <table class="table_data table-responsive">
+                        <thead>
+                            <tr>
+                                <th>
+                                    the time
+                                </th>
+                                <th>
+                                    today
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- أضف هنا مواعيد العمل -->
+                            <tr class="style_table_information">
+                                <td>
+                                    9:00 A.M - 5:00 evening
+                                </td>
+                                <td>
+                                    Sunday
+                                </td>
+                            </tr>
+                            <tr class="style_table_information">
+                                <td>
+                                    9:00 A.M - 5:00 evening
+                                </td>
+                                <td>
+                                    Monday
+                                </td>
+                            </tr>
+                            <tr class="style_table_information">
+                                <td>
+                                    9:00 A.M - 5:00 evening
+                                </td>
+                                <td>
+                                    Tuesday
+                                </td>
+                            </tr>
+                            <tr class="style_table_information">
+                                <td>
+                                    9:00 A.M - 5:00 evening
+                                </td>
+                                <td>
+                                    Wednesday
+                                </td>
+                            </tr>
+                            <tr class="style_table_information">
+                                <td>
+                                    9:00 A.M - 3:00 evening
+                                </td>
+                                <td>
+                                    Thursday
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </header>
+
+    <!--GetStarted Section-->
+    <section class="Getstarted-section" id="about">
+        <div class="getstarted-bg-img style_update">
+            <div class="container">
+                <div class="main-getstarted-content">
+                    <h3> Embark on unforgettable adventures with Tripu and discover new destinations every day. </h3>
+                    <p>
+                        Choose Tripu for ideal car and motorcycle trips at the best prices.
+                    </p>
+                    <button class="primary-button clip-path">
+                        <a href="usedApp_en.html">Get started</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Safety Feature Section-->
+    <section class="safetyfeature-section" id="safety">
+        <div class="container">
+            <h3 class="text_top_sections" data-aos="zoom-in">
+                Focus on safety wherever you go
+            </h3>
+            <div class="safetyfeature-container">
+                <div class="safetyfeature-left" data-aos="fade-right">
+                    <img src="Assets/image/driver3.jpg" alt="safety1" />
+                    <h3>
+                        We aim to ensure that every choice you make is safe and secure with TripU.
+                    </h3>
+                    <p class="safety_style">
+                        At TripU, we care about the safety of our users, and we always care about providing a safe and
+                        reliable environment for their trading.
+                    </p>
+                    <p>
+                        Our top priority is ensuring your safety. We only cooperate with reliable service providers.
+                    </p>
+                    <div class="safety-span">
+                        <a class="link_Ago_pages_one clip-path link_media" role="button" aria-expanded="false" href="#"
+                            onclick="return false">
+                            Read about our community guidelines
+                        </a>
+                        <a class="link_Ago_pages_one clip-path link_media" role="button" aria-expanded="false" href="#"
+                            onclick="return false">
+                            See all safety features
+                        </a>
+                    </div>
+                </div>
+
+                <div class="safetyfeature-right" data-aos="fade-left">
+                    <img src="Assets/image/driver1.jpg" alt="safety1" />
+                    <h3>
+                        You can drive whenever you want, and make as much income as you need
+                    </h3>
+                    <p>
+                        Earn money to fit your schedule with deliveries, rides, or both. You could
+                        Use your car
+                        Own or choose a car available for rent through TripU
+                    </p>
+                    <a class="link_Ago_pages_one clip-path" role="button" aria-expanded="false" href="#"
+                        onclick="return false">
+                        View all cities
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Feature Section-->
+    <section class="feature-section" id="helping">
+        <div class="container">
+
+            <h3 class="text_top_sections" data-aos="zoom-in">
+                TripU in its new corporate guise
+            </h3>
+
+            <div class="feature-innercontainer">
+
+                <div class="featureBox" data-aos="fade-right">
+                    <div class="cover_taps_one">
+                        <div class="feature-Img">
+                            <img src="Assets/image/Aboutus.png" alt="about-us-img" />
+                        </div>
+                        <h3>
+                            About us
+                        </h3>
+                        <p>
+                            We reimagine the way the world works for the better
+                        </p>
+                        <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#"
+                            onclick="return false">
+                            Learn more about TripU
+                        </a>
+                    </div>
+                </div>
+
+                <div class="featureBox" data-aos="fade-up">
+                    <div class="cover_taps_one">
+                        <div class="feature-Img">
+                            <img src="Assets/image/paper.png" alt="about-us-img" />
+                        </div>
+                        <h3>
+                            newsroom
+                        </h3>
+                        <p>
+                            See announcements about our latest releases, initiatives and
+                            Partnership.
+                        </p>
+                        <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#"
+                            onclick="return false">
+                            Go to the newsroom
+                        </a>
+                    </div>
+                </div>
+
+                <div class="featureBox" data-aos="fade-left">
+                    <div class="cover_taps_one">
+                        <div class="feature-Img">
+                            <img src="Assets/image/home.png" alt="about-us-img" />
+                        </div>
+                        <h3>
+                            Global citizenship
+                        </h3>
+                        <p>
+                            Read about our commitment to making a positive impact in cities
+                            We serve.
+                        </p>
+                        <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#"
+                            onclick="return false">
+                            See our subscriptions
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- offer section -->
+    <section class="offer-section" id="offer">
+        <div class="container">
+
+            <h3 class="text_top_sections" data-aos="zoom-in">
+                The app aims to provide fair rides
+            </h3>
+
+            <div class="offer-innercontainer">
+
+                <div class="offerBox" data-aos="fade-right">
+                    <div class="cover_taps_one">
+                        <div class="offer-Img">
+                            <img src="Assets/image/task/city.png" alt="about-us-img" />
+                        </div>
+                        <h3>
+                            City trips
+                        </h3>
+                        <p>
+                            Choose a driver and offer your fare for the trip
+                        </p>
+                        <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#"
+                            onclick="return false">
+                            Learn more
+                        </a>
+                    </div>
+                </div>
+
+                <div class="offerBox" data-aos="fade-up">
+                    <div class="cover_taps_one">
+                        <div class="offer-Img">
+                            <img src="Assets/image/task/transparent.png" alt="about-us-img" />
+                        </div>
+                        <h3>
+                            Transport and delivery of shipments
+                        </h3>
+                        <p>
+                            Transport and ship goods at the price you specify
+                        </p>
+                        <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#"
+                            onclick="return false">
+                            Learn more
+                        </a>
+                    </div>
+                </div>
+
+                <div class="offerBox" data-aos="fade-left">
+                    <div class="cover_taps_one">
+                        <div class="offer-Img">
+                            <img src="Assets/image/task/travel.png" class="before_style" alt="about-us-img" />
+                        </div>
+                        <h3>
+                            travel
+                        </h3>
+                        <p>
+                            Travel from one city to another at a price of your choice
+                        </p>
+                        <a class="link_Ago_pages_tow" role="button" aria-expanded="false" href="#"
+                            onclick="return false">
+                            Learn more
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Ride Section-->
+    <section class="Ride-section" data-aos="fade-up" id="servier">
+        <div class="container">
+            <h2 data-aos="fade-left" class="zoom-in style_fonrSize">
+                At TripU, we believe every trip should be not only an exciting adventure but also a safe and reassuring
+                experience.
+            </h2>
+            <div class="ride-feature-container">
+                <div class="ride-box1" data-aos="fade-right">
+                    <div class="ride-img">
+                        <img src="Assets/image/Ride1.jpg" alt="ride-1" />
+                    </div>
+                    <div class="ride-content">
+                        <h3>TribU Trucycle</h3>
+                        <p>
+                            TripU puts security at the heart of our services, allowing you to explore and enjoy your
+                            trip without worry. whether
+                            You are planning a trip
+                            A short in the city or an off-road adventure
+                        </p>
+                    </div>
+                    <div class="ride-arrow">
+                        <i class="fa-solid fa-arrow-right text_rutaet"></i>
+                    </div>
+                </div>
+
+                <div class="ride-box1" data-aos="fade-left">
+                    <div class="ride-img">
+                        <img src="Assets/image/Ride2.png" alt="ride-2" />
+                    </div>
+                    <div class="ride-content">
+                        <h3>TripU Motor</h3>
+                        <p>
+                            With TripU Matur, get ready for unforgettable road trips with safety and excitement as our
+                            priorities Discover Fun
+                            Open roads with
+                            Matur from TripU, where every trip is the beginning of a new story.
+                        </p>
+                    </div>
+                    <div class="ride-arrow">
+                        <i class="fa-solid fa-arrow-right text_rutaet"></i>
+                    </div>
+                </div>
+
+                <div class="ride-box1" data-aos="fade-right">
+                    <div class="ride-img">
+                        <img src="Assets/image/Ride3.png" alt="ride-3" />
+                    </div>
+                    <div class="ride-content">
+                        <h3>TripU direct flight</h3>
+                        <p>
+                            Explore the world freely with TripU rentals. Convenience and flexibility in choosing your
+                            trip with TripU
+                            For rent, enjoy
+                            With an easy and convenient rental experience to make every trip more special
+                        </p>
+                    </div>
+                    <div class="ride-arrow">
+                        <i class="fa-solid fa-arrow-right text_rutaet"></i>
+                    </div>
+                </div>
+
+                <div class="ride-box1" data-aos="fade-left">
+                    <div class="ride-img">
+                        <img src="Assets/image/Ride4.png" alt="ride-4" />
+                    </div>
+                    <div class="ride-content">
+                        <h3>TripU Moving between cities</h3>
+                        <p>
+                            TripU makes moving between cities a smooth and convenient experience, while providing
+                            diverse transportation options. Enjoy trips between
+                            Cities without
+                            Strain with TripU, where traveling becomes easier and faster
+                        </p>
+                    </div>
+                    <div class="ride-arrow">
+                        <i class="fa-solid fa-arrow-right text_rutaet"></i>
+                    </div>
+                </div>
+
+                <div class="ride-box1" data-aos="fade-left">
+                    <div class="ride-img">
+                        <img src="Assets/image/Ride5.png" alt="ride-4" />
+                    </div>
+                    <div class="ride-content">
+                        <h3>TripU transportation</h3>
+                        <p>
+                            TripU provides furniture moving services that fully meet your needs, making moving home a
+                            breeze
+                            The new one is smooth
+                            Book furniture moving services easily and conveniently with TripU for a convenient and
+                            reliable moving experience
+                        </p>
+                    </div>
+                    <div class="ride-arrow">
+                        <i class="fa-solid fa-arrow-right text_rutaet"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- conatct us -->
+    <section class="Contact-section" id="contact">
+        <div class="container">
+            <h2 class="zoom-in" data-aos="fade-left">
+                call us
+            </h2>
+            <div class="conatct-feature-section">
+                <form class="form_conatct" id="form">
+                    <label class="label_conatct" for="name"> the name :</label>
+                    <input class="input_name" type="text" id="name" name="name" required>
+
+                    <label class="label_conatct" for="email"> Email :</label>
+                    <input class="input_email" type="email" id="email" name="email" required>
+
+                    <label class="label_conatct" for="message"> Private message:</label>
+                    <textarea class="url_message" id="message" name="message" required></textarea>
+
+                    <button class="button_contact input_buuton" type="submit">Send</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+    <!--QR Section-->
+    <section class="QR-section">
+        <div class="container">
+            <h3 class="text_top_sections zoom-in" data-aos="fade-right">
+                It's easier in applications
+            </h3>
+            <div class="QR-section-InnerContainer">
+
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.tripu.tripu&pli=1">
+                    <div class="qr-section-box" data-aos="fade-right">
+                        <div class="qr-img">
+                            <img src="Assets/image/TripU_captian.png" alt="QR" />
+                        </div>
+                        <div class="qr-img_2">
+                            <img src="Assets/image/QR_wep/CAPTAIN.png" alt="QR" />
+                        </div>
+                        <div class="qr-content">
+                            <h3>
+                                Download the captain app
+                            </h3>
+                            <p>
+                                Scan the code to download
+                            </p>
+                        </div>
+                        <div class="qr-arrow">
+                            <i class="fa-solid fa-arrow-right text_rutaet"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.user.tripu">
+                    <div class="qr-section-box" data-aos="fade-left">
+                        <div class="qr-img">
+                            <img src="Assets/image/TripU_clinte.png" alt="QR" />
+                        </div>
+                        <div class="qr-img_2">
+                            <img src="Assets/image/QR_wep/CLIENT.png" alt="QR" />
+                        </div>
+                        <div class="qr-content">
+                            <h3>
+                                Download the client application
+                            </h3>
+                            <p>
+                                Scan the code to download
+                            </p>
+                        </div>
+                        <div class="qr-arrow">
+                            <i class="fa-solid fa-arrow-right text_rutaet"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Sign-Section-->
+    <section class="sign-section" data-aos="fade-up" id="autho">
+        <div class="container">
+            <div class="sign-section-container">
+                <a role="button" aria-expanded="false" href="#" onclick="return false">
+                    <div class="sign-box">
+                        <span>
+                            Log in to captain
+                        </span>
+                        <div class="sign-arrow">
+                            <i class="fa-solid fa-arrow-right text_rutaet"></i>
+                        </div>
+                    </div>
+                </a>
+                <a role="button" aria-expanded="false" href="#" onclick="return false">
+                    <div class="sign-box">
+                        <span>
+                            client login
+                        </span>
+                        <div class="sign-arrow">
+                            <i class="fa-solid fa-arrow-right text_rutaet"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!--Footer-section-->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="logo-widget footer-widget">
+                            <figure class="logo-box">
+
+                                <a class="footer-company-logo" href="home_en.html">
+                                    <img class="img_logo_white" src="Assets/image/whait logo/512x.png " alt="TripU">
+                                </a>
+                            </figure>
+                            <div class="text">
+                                <p class="text_footer"> Visit the Help Center</p>
+                                <span class="span_footer">
+                                    <a href="index.html"><i class="fa-solid fa-globe"></i> Ar</a>
+                                </span>
+                            </div>
+                            <ul class="footer-social">
+                                <li><a role="button" aria-expanded="false" href="#" onclick="return false"><i
+                                            class="fa-brands fa-facebook"></i></a></li>
+                                <li><a role="button" aria-expanded="false" href="#" onclick="return false"> <i
+                                            class="fa-brands fa-youtube"></i></a></li>
+                                <li><a role="button" aria-expanded="false" href="#" onclick="return false"><i
+                                            class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a role="button" aria-expanded="false" href="#" onclick="return false"> <i
+                                            class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12  footer-column">
+                        <div class="service-widget footer-widget dir_right">
+                            <div class="footer-title">
+                                Company
+                            </div>
+                            <ul class="list">
+                                <li><a href="#about">
+                                        about us
+                                    </a></li>
+                                <li><a href="#offer">
+                                        Our offers
+                                    </a></li>
+                                <li><a href="roomnews_en.html">
+                                        newsroom
+                                    </a></li>
+                                <li><a href="page_global_en.html">
+                                        Global citizenship
+                                    </a></li>
+                                <li><a href="faq_en.html">
+                                        Blog
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+                        <div class="contact-widget footer-widget dir_right">
+                            <div class="footer-title">
+                                Identification information
+                            </div>
+                            <ul class="list">
+                                <li><a href="#servier">
+                                        Our service
+                                    </a></li>
+                                <li><a href="policy_user_en.html">
+                                        Our policy
+                                    </a></li>
+                                <li><a href="usedApp_en.html">
+                                        Introduction to app
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+                        <div class="contact-widget footer-widget dir_right">
+                            <div class="footer-title">
+                                Global citizenship
+                            </div>
+                            <ul class="list">
+                                <li><a href="#about">
+                                        about us
+                                    </a></li>
+                                <li><a href="#offer">
+                                        Our offers
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 column">
+                        <div class="copyright"><a role="button" aria-expanded="false" href="#"
+                                onclick="return false">TripU</a>
+                            &copy; 2023 All Right Reserved</div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 column">
+                        <ul class="footer-nav">
+                            <li><a href="policy_en.html">
+                                    Terms of Service
+                                </a></li>
+                            <li><a href="policy_en.html">
+                                    privacy policy
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- mobile menu -->
+    <div id="myNav" class="overlay">
+        <div class="nav_bar_modile_under">
+            <div class="under_mobile">
+                <a href="index.html">
+                    <img src="Assets/image/whait logo/58x.png">
+                </a>
+                <a href="javascript:void(0)" class="closebtn" id="closeButton" onclick="closeNav()">
+                    <i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i>
+                </a>
+            </div>
+        </div>
+        <ul class="overlay-content">
+            <li class="list_mobile_nav">
+                <button class="nav-button menu_mobile data_about_mobile" onclick="menuMobileNav()">
+                    <span> company </span>
+                    <i class="fa-solid fa-angle-down style_new"></i>
+                </button>
+                <ul id="dropdownMobile" class="dropdown_content_mobile">
+                    <li class="list_dropDown_mobile">
+                        <a class="link_dropDown_mobile" id="" href="#about"> about us</a>
+                    </li>
+                    <li class="list_dropDown_mobile">
+                        <a class="link_dropDown_mobile" id="" href="#offer">Offers</a>
+                    </li>
+                    <li class="list_dropDown_mobile">
+                        <a class="link_dropDown_mobile" id="" href="#contact"> call us</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="list_mobile_nav">
+                <a href="#safety"><button class="nav-button"> safety </button></a>
+            </li>
+            <li class="list_mobile_nav">
+                <a href="#helping"><button class="nav-button"> Helps </button></a>
+            </li>
+            <li class="list_mobile_nav">
+                <a href="index.html"> <button class=" nav-button language_mobile">
+                        Ar
+                        <i class="fa-solid fa-globe"></i>
+                    </button></a>
+            </li>
+            <li class="list_mobile_nav">
+                <button class=" nav-button" onclick="listMobileNav()">
+                    <!-- <i class="fa-solid fa-braille"></i> -->
+                    <span> Identification information</span>
+                </button>
+                <ul id="dropdownMobileList" class="dropdown_product_mobile">
+                    <li class="list_dropDown_mobile">
+                        <a class="link_dropDown_mobile" id="" href="#servier"> Services </a>
+                    </li>
+                    <li class="list_dropDown_mobile">
+                        <a class="link_dropDown_mobile" id="" href="policy_user_ar.html"> Policy </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="list_mobile_nav style_button_loreg">
+                <a href="#autho"><button class=" nav-button"> sign in</button></a>
+                <a href="#autho"><button class=" nav-button-white"> subscription </button></a>
+            </li>
+        </ul>
+    </div>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/21798bf211.js" crossorigin="anonymous"></script>
+
+    <!--Aos/bootstrab/js-->
+    <script src="Assets/js/TripU_Script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="Assets/js/aos_js.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

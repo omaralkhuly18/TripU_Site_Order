@@ -1,0 +1,76 @@
+h2 {
+    font-size: 3.25rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+h3 {
+    font-size: 2.25rem;
+    text-align: right;
+}
+
+h4 {
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+p {
+    font-family: "Tajawal", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: right;
+}
+
+input {
+    display: block;
+    text-align: right;
+}
+
+input[type="text"],
+label {
+    text-align: right;
+}
+
+.dropdown_content_mobile,
+.dropdown_product_mobile {
+  text-align: right;
+}
+
+.close_this {
+    text-align: right;
+}
+
+.main-getstarted-content {
+    text-align: right;
+}
+
+i.text_rutaet {
+    transform: rotate(180deg);
+}
+
+.main-footer{
+    direction: ltr;
+}
+
+.dir_right{
+    text-align: right;
+}
+
+.footer-bottom .footer-nav {
+    text-align: right;
+}
+
+.footer-content {
+    /* direction: ltr; */
+    width: 100%;
+}
+
+.data_about i,
+.language i {
+    margin-right: 10%;
+}
+
+.data_about_mobile i,
+.language_mobile i{
+    margin-right: 2%;
+}
